@@ -40,6 +40,21 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Survey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Question.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SurveyListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CreateSurveyPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SurveyDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CloudSurveyStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SurveyListPage.xaml.cs">
+      <DependentUpon>SurveyListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CreateSurveyPage.xaml.cs">
+      <DependentUpon>CreateSurveyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SurveyDetailPage.xaml.cs">
+      <DependentUpon>SurveyDetailPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -48,5 +63,14 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SurveyListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\CreateSurveyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SurveyDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
