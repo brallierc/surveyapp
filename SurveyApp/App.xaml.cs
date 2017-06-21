@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-
+using SurveyApp.Services;
+using SurveyApp.Views;
 using Xamarin.Forms;
 
 namespace SurveyApp
@@ -15,47 +16,27 @@ namespace SurveyApp
         {
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<CloudDataStore>();
 
-            SetMainPage();
+            MainPage = new NavigationPage(new StartTestPage());
         }
 
-        public static void SetMainPage()
+
+        public static void StartWithMockData()
         {
-            if (!UseMockDataStore && !Settings.IsLoggedIn)
-            {
-                Current.MainPage = new NavigationPage(new LoginPage())
-                {
-                    BarBackgroundColor = (Color)Current.Resources["Primary"],
-                    BarTextColor = Color.White
-                };
-            }
-            else
-            {
-                GoToMainPage();
-            }
+            UseMockDataStore = true;
+            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<MockSurveyStore>();
+
+            Current.MainPage = new NavigationPage(new SurveyListPage());
+
         }
 
-        public static void GoToMainPage()
+        public static void StartWithRealData()
         {
-            Current.MainPage = new TabbedPage
-            {
-                Children = {
-                    new NavigationPage(new ItemsPage())
-                    {
-                        Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png", null, null)
-                    },
-                    new NavigationPage(new AboutPage())
-                    {
-                        Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png", null, null)
-                    },
-                }
-            };
+            UseMockDataStore = false;
+            DependencyService.Register<CloudDataStore>();
+            DependencyService.Register<CloudSurveyStore>();
+            Current.MainPage = new NavigationPage(new SurveyListPage());
         }
     }
 }

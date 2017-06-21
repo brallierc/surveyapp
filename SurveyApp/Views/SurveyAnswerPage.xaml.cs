@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace SurveyApp.Views
 {
-    public partial class SurveyDetailPage : ContentPage
+    public partial class SurveyAnswerPage : ContentPage
     {
-        public SurveyDetailPage(Survey model)
+        public SurveyAnswerPage(Survey model)
         {
             InitializeComponent();
-            BindingContext = new SurveyDetailPageViewModel(model);
+            BindingContext = new SurveyAnswerPageViewModel(model);
         }
     }
 }

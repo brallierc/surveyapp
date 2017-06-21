@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SurveyApp.Views.StartTestPage" Title="Survey App">
+	<ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Button Text="Use Mock Data" Clicked="MockData_Clicked"/>
+            <Button Text="Use Server Data" Clicked="ServerData_Clicked"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

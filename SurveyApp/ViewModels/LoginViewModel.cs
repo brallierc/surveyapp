@@ -10,7 +10,6 @@ namespace SurveyApp
         public LoginViewModel()
         {
             SignInCommand = new Command(async () => await SignIn());
-            NotNowCommand = new Command(App.GoToMainPage);
         }
 
         string message = string.Empty;
@@ -38,8 +37,6 @@ namespace SurveyApp
                 Message = string.Empty;
                 IsBusy = false;
 
-                if (Settings.IsLoggedIn)
-                    App.GoToMainPage();
             }
         }
 

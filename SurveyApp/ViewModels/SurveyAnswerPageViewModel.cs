@@ -3,9 +3,9 @@ using SurveyApp.Models;
 
 namespace SurveyApp.ViewModels
 {
-    public class SurveyDetailPageViewModel : BaseViewModel
+    public class SurveyAnswerPageViewModel : BaseViewModel
     {
-        public SurveyDetailPageViewModel(Survey survey)
+        public SurveyAnswerPageViewModel(Survey survey)
         {
             Title = survey.Title;
         }

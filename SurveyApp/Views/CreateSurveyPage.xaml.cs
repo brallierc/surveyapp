@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using SurveyApp.ViewModels;
 using Xamarin.Forms;
 
 namespace SurveyApp.Views
@@ -10,6 +10,7 @@ namespace SurveyApp.Views
         public CreateSurveyPage()
         {
             InitializeComponent();
+            BindingContext = new CreateSurveyPageViewModel();
         }
     }
 }
