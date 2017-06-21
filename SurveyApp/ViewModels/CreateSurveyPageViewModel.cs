@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using SurveyApp.Models;
 using Xamarin.Forms;
@@ -11,7 +12,7 @@ namespace SurveyApp.ViewModels
         private string _title;
         private string _description;
         private string _question;
-        private ObservableRangeCollection<string> _options;
+        private IEnumerable<string> _options;
         private ICommand _createCommand;
 
         public string NewTitle
@@ -50,7 +51,7 @@ namespace SurveyApp.ViewModels
             }
         }
 
-        public ObservableRangeCollection<string> Options
+        public IEnumerable<string> Options
         {
             get
             {

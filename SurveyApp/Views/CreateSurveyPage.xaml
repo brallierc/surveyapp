@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SurveyApp.Views.CreateSurveyPage" Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create" Clicked="Create_Clicked"/>
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="16">
+                <Entry Placeholder="Survey Title" Text="{Binding SurveyTitle}"/>
+                <Entry Placeholder="Description" Text="{Binding Description}"/>
+                <Entry Placeholder="Question" Text="{Binding Question}"/>
+                <Label Text="Add Options:"/>
+                <Entry x:Name="FirstOptionEntry" Placeholder="Option"/>
+                <StackLayout x:Name="OptionContainer" Orientation="Vertical"/>
+                <Button Text="Add another option" Clicked="AddOption_Clicked"/>
+            </StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>
