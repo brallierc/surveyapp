@@ -24,7 +24,6 @@ namespace SurveyApp
         public static void StartWithMockData()
         {
             UseMockDataStore = true;
-            DependencyService.Register<MockDataStore>();
             DependencyService.Register<MockSurveyStore>();
 
             Current.MainPage = new NavigationPage(new SurveyListPage());
