@@ -67,7 +67,7 @@ namespace SurveyApp.ViewModels
         {
             var newSurvey = new Survey
             {
-                Title = Title,
+                Title = NewTitle,
                 Description = Description,
                 Question = Question,
                 Options = Options

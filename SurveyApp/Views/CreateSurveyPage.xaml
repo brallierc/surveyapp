@@ -6,7 +6,7 @@
 	<ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout Orientation="Vertical" Margin="16">
-                <Entry Placeholder="Survey Title" Text="{Binding SurveyTitle}"/>
+                <Entry Placeholder="Survey Title" Text="{Binding NewTitle}"/>
                 <Entry Placeholder="Description" Text="{Binding Description}"/>
                 <Entry Placeholder="Question" Text="{Binding Question}"/>
                 <Label Text="Add Options:"/>
