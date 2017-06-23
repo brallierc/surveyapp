@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SurveyApp.Models;
 using SurveyApp.ViewModels;
 using Xamarin.Forms;
 
@@ -12,6 +13,10 @@ namespace SurveyApp.Views
         {
             InitializeComponent();
             BindingContext = new CreateSurveyPageViewModel();
+            MessagingCenter.Subscribe<CreateSurveyPageViewModel, Survey>(BindingContext, "GO_BACK", (vm, survey) =>
+            {
+                Navigation?.PopAsync();
+            });
         }
 
         private void Create_Clicked(object s, EventArgs a)
@@ -19,7 +24,7 @@ namespace SurveyApp.Views
             var vm = (CreateSurveyPageViewModel)BindingContext;
             var entries = new List<Entry>();
             entries.Add(FirstOptionEntry);
-            foreach(StackLayout entryContainer in OptionContainer.Children)
+            foreach (StackLayout entryContainer in OptionContainer.Children)
             {
                 var entry = entryContainer.Children.FirstOrDefault(view => view.GetType() == typeof(Entry));
                 entries.Add((Entry)entry);

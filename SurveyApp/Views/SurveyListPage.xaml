@@ -7,7 +7,7 @@
         <ListView x:Name="SurveyList" ItemsSource="{Binding Surveys}" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}" ItemSelected="OnItemSelected" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Title}"/>
+                    <TextCell Text="{Binding Title}" Detail="{Binding Answer}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

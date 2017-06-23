@@ -12,6 +12,10 @@ namespace SurveyApp.Views
         {
             InitializeComponent();
             BindingContext = new SurveyAnswerPageViewModel(model);
+            MessagingCenter.Subscribe<SurveyAnswerPageViewModel, Survey>(BindingContext, "GO_BACK", (vm, survey) =>
+            {
+                Navigation?.PopAsync();
+            });
         }
     }
 }

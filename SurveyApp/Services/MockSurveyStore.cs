@@ -19,54 +19,63 @@ namespace SurveyApp.Services
             var items = new List<Survey>
             {
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 1",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 2",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 3",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 4",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 5",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 6",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 7",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 8",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
                     Options = new List<string>{ "Option 1", "Option 2", "Option 3", "Option 4"}
                 },
                 new Survey(){
+                    Id = Guid.NewGuid().ToString(),
                     Title = "Survey 9",
                     Description = "This is a test survey with a single question and multiple options",
                     Question = "What is the answer?",
@@ -82,6 +91,7 @@ namespace SurveyApp.Services
 
         public async Task<bool> AddItemAsync(Survey item)
         {
+            item.Id = Guid.NewGuid().ToString();
             _items.Add(item);
 
             return await Task.FromResult(true);

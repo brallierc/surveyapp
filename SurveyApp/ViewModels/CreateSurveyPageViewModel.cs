@@ -65,14 +65,23 @@ namespace SurveyApp.ViewModels
 
         public ICommand CreateCommand => _createCommand ?? (_createCommand = new Command(async () =>
         {
-            var newSurvey = new Survey
-            {
-                Title = NewTitle,
-                Description = Description,
-                Question = Question,
-                Options = Options
-            };
-            await _surveyStore.AddItemAsync(newSurvey);
+            try{
+                IsBusy = true;
+                var newSurvey = new Survey
+                {
+                    Title = NewTitle,
+                    Description = Description,
+                    Question = Question,
+                    Options = Options
+                };
+                await _surveyStore.AddItemAsync(newSurvey);
+
+                MessagingCenter.Send(this, "GO_BACK", newSurvey);
+            }
+            finally{
+                IsBusy = false;
+            }
+           
         }));
 
         public CreateSurveyPageViewModel()

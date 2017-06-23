@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SurveyApp.Views.SurveyAnswerPage" Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Done" Command="{Binding AnswerCommand}"/>
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16">
+                <Label Text="{Binding Description}"/>
+                <Label Text="{Binding Question}"/>
+                <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding Answer}"/>
+            </StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>
